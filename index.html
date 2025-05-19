@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nivida | Mobile App Engineer</title>
+  <title>Nivida | Mobile App Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -25,9 +25,22 @@
       -webkit-text-fill-color: transparent;
       animation: glow 2s ease-in-out infinite alternate;
     }
+    header h2 {
+      color: #ffb347;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
     @keyframes glow {
       from { text-shadow: 0 0 10px #ff00cc; }
       to { text-shadow: 0 0 20px #00ffff; }
+    }
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid #ff00cc;
+      box-shadow: 0 0 20px rgba(255, 0, 200, 0.5);
     }
     header p {
       color: #cccccc;
@@ -53,6 +66,23 @@
     .project h3 {
       color: #ffb347;
     }
+    .tech-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 2rem auto;
+    }
+    .tech-icons img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 5px #00ffff);
+      transition: transform 0.3s ease;
+    }
+    .tech-icons img:hover {
+      transform: scale(1.1);
+    }
     a {
       color: #00ffff;
       text-decoration: none;
@@ -70,11 +100,24 @@
 </head>
 <body>
   <header>
+    <img src="PortfolioPic.jpeg" alt="Nivida photo">
     <h1>Nivida</h1>
-    <p>Senior iOS & Flutter Contract Engineer | SwiftUI Specialist | Fintech & Automotive</p>
+    <h2>Mobile App Developer with Expertise in Flutter · iOS · Swift · Android · Kotlin · Architecture</h2>
     <p>📍 London | Open to Outside IR35 Contracts</p>
     <p><a href="mailto:nividagautam87@gmail.com">📧 nividagautam87@gmail.com</a> | <a href="https://www.linkedin.com/in/nivida-gautam-mobile-application-ios-team-lead" target="_blank">🔗 LinkedIn</a></p>
   </header>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <div class="tech-icons">
+      <img src="https://img.icons8.com/color/96/flutter.png" alt="Flutter">
+      <img src="https://img.icons8.com/color/96/swift.png" alt="Swift">
+      <img src="https://img.icons8.com/color/96/android-os.png" alt="Android">
+      <img src="https://img.icons8.com/color/96/mac-os.png" alt="iOS">
+      <img src="https://img.icons8.com/color/96/kotlin.png" alt="Kotlin">
+      <img src="https://img.icons8.com/color/96/code.png" alt="Architecture">
+    </div>
+  </section>
 
   <section>
     <h2>About Me</h2>
@@ -110,7 +153,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Nivida Gautam | Built with caffeine and Flutter regret</p>
+    <p>&copy; 2025 Nivida | Built with caffeine and Flutter regret</p>
   </footer>
 </body>
 </html>
