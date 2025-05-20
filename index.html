@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-gradient: linear-gradient(135deg, #141414, #1c1c1c);
+      --bg-gradient: linear-gradient(135deg, #141414, #1f1b24, #2a2a3b);
       --accent-pink: #e88ed0;
       --accent-purple: #a983e4;
       --accent-blue: #89caff;
@@ -23,6 +23,9 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg-gradient);
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
       color: var(--text-light);
       margin: 0;
       padding: 0;
@@ -53,11 +56,13 @@
     }
 
     header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
       border: 2px solid var(--accent-purple);
       margin-bottom: 1rem;
+      object-fit: cover;
+      box-shadow: 0 0 12px rgba(169, 131, 228, 0.3);
     }
 
     header p {
