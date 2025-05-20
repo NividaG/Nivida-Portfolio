@@ -28,16 +28,19 @@
       color: var(--white);
     }
 
+    section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
     .hero {
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 4rem 2rem 2rem;
-      min-height: 100vh;
       gap: 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
       flex-wrap: wrap;
+      min-height: 100vh;
     }
 
     .profile-card {
@@ -149,6 +152,17 @@
     .nav-buttons a.active {
       border: 2px solid #ffffff;
     }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
@@ -183,13 +197,27 @@
         </div>
       </div>
       <div class="nav-buttons">
-        <a href="#about" class="active">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#about" class="active">About Me</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Me</a>
       </div>
     </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>Proficient in Flutter, Swift, Kotlin, and full-stack mobile architecture. Experienced in building apps for iOS and Android platforms with strong UI/UX principles and modern development tools.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Some standout work includes: TailorTrack (Flutter), Lloyds iOS banking app with chatbot integration, and automotive mobile interfaces for Hyundai and Bentley.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me directly at <a href="mailto:nividagautam87@gmail.com" style="color: #fff; text-decoration: underline;">nividagautam87@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/nivida-gautam-mobile-application-ios-team-lead" target="_blank" style="color: #fff; text-decoration: underline;">LinkedIn</a>.</p>
   </section>
 </body>
 </html>
