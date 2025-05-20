@@ -2,104 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nivida | Mobile App Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nivida</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-gradient: linear-gradient(135deg, #141414, #1f1b24, #2a2a3b);
-      --accent-pink: #e88ed0;
-      --accent-purple: #a983e4;
-      --accent-blue: #89caff;
-      --card-bg: #1b1b1b;
-      --text-light: #e4e4e4;
-      --text-muted: #999;
+      --bg: linear-gradient(135deg, #101010, #1e1e28);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --glass-blur: blur(10px);
+      --accent: #5ce1e6;
+      --white: #f5f5f5;
+      --muted: #bbbbbb;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg-gradient);
-      background-attachment: fixed;
-      background-size: cover;
-      background-repeat: no-repeat;
-      color: var(--text-light);
-      margin: 0;
-      padding: 0;
+      background: var(--bg);
+      color: var(--white);
+      overflow-x: hidden;
       line-height: 1.6;
     }
 
     header {
-      background: var(--bg-gradient);
-      padding: 4rem 2rem 2rem;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 2rem;
     }
 
     header h1 {
-      font-size: 2.75rem;
-      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple), var(--accent-blue));
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #5ce1e6, #b983ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-weight: 700;
-      margin: 0.5rem 0 0.2rem;
-    }
-
-    header h2 {
-      color: var(--accent-purple);
-      font-weight: 500;
-      font-size: 1.25rem;
-      margin: 0 auto 1rem;
-      max-width: 600px;
-    }
-
-    header img {
-      width: 200px;
-      height: 200px;
-      border-radius: 12px;
-      border: 2px solid var(--accent-purple);
-      margin-bottom: 1rem;
-      object-fit: cover;
-      box-shadow: 0 0 12px rgba(169, 131, 228, 0.3);
+      margin-bottom: 0.5rem;
     }
 
     header p {
-      color: var(--text-muted);
-      margin: 0.5rem 0;
-      font-size: 0.95rem;
+      font-size: 1.2rem;
+      color: var(--muted);
     }
 
-    section {
-      padding: 2rem;
-      max-width: 900px;
+    .section {
+      padding: 4rem 2rem;
+      max-width: 960px;
       margin: 0 auto;
     }
 
-    h2 {
-      color: var(--accent-pink);
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .project {
+    .glass-card {
       background: var(--card-bg);
-      border: 1px solid #2a2a2a;
-      padding: 1.5rem;
+      -webkit-backdrop-filter: var(--glass-blur);
+      backdrop-filter: var(--glass-blur);
+      border-radius: 16px;
+      padding: 2rem;
       margin-bottom: 2rem;
-      border-radius: 10px;
-      transition: background 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .project:hover {
-      background: #222;
-    }
-
-    .project h3 {
-      color: var(--accent-purple);
-      margin-top: 0;
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
     }
 
     .tech-icons {
@@ -107,97 +80,64 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      margin: 2rem auto;
+      margin-top: 1rem;
     }
 
     .tech-icons img {
       width: 50px;
       height: 50px;
-      object-fit: contain;
-      filter: grayscale(0.2) brightness(1.1);
-      opacity: 0.9;
-      transition: transform 0.3s ease, opacity 0.3s;
+      transition: transform 0.3s;
     }
 
     .tech-icons img:hover {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-
-    a {
-      color: var(--accent-blue);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      transform: scale(1.1);
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #111;
-      color: var(--text-muted);
       font-size: 0.9rem;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="ProfilePic2.jpeg" alt="Nivida photo">
     <h1>Nivida</h1>
-    <h2>Mobile App Developer with Expertise in Flutter · iOS · Swift · Android · Kotlin · Architecture</h2>
-    <p>📍 London | Open to Outside IR35 Contracts</p>
-    <p><a href="mailto:nividagautam87@gmail.com">📧 nividagautam87@gmail.com</a> | <a href="https://www.linkedin.com/in/nivida-gautam-mobile-application-ios-team-lead" target="_blank">🔗 LinkedIn</a></p>
+    <p>Mobile App Developer · Flutter · iOS · Kotlin · Architecture</p>
   </header>
 
-  <section>
-    <h2>Tech Stack</h2>
-    <div class="tech-icons">
-      <img src="https://img.icons8.com/color/96/flutter.png" alt="Flutter">
-      <img src="https://img.icons8.com/color/96/swift.png" alt="Swift">
-      <img src="https://img.icons8.com/color/96/android-os.png" alt="Android">
-      <img src="https://img.icons8.com/color/96/mac-os.png" alt="iOS">
-      <img src="https://img.icons8.com/color/96/kotlin.png" alt="Kotlin">
-      <img src="https://img.icons8.com/color/96/code.png" alt="Architecture">
-    </div>
-  </section>
-
-  <section>
-    <h2>About Me</h2>
-    <p>I’m a senior mobile app developer with over 14 years of experience in building high-performance iOS and Flutter apps. Recently, I’ve expanded into Flutter and built a fully functional tailoring business app to demonstrate my cross-platform capabilities. I'm passionate about scalable architecture, great UX, and clean code.</p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>📱 TailorTrack (Flutter Demo App)</h3>
-      <p>A mobile app built in Flutter for small tailoring businesses to manage customer profiles, measurements for multiple garment types, and employee records.</p>
-      <ul>
-        <li>Dark mode enabled</li>
-        <li>MVVC architecture</li>
-        <li>Local data storage with scalable structure</li>
-      </ul>
+  <section class="section">
+    <div class="glass-card">
+      <h2>About Me</h2>
+      <p>I’m a mobile app developer with 14 years of experience creating native iOS and cross-platform Flutter applications. I’m passionate about design systems, efficient architecture, and seamless user experiences.</p>
     </div>
 
-    <div class="project">
-      <h3>💼 Lloyds Banking App</h3>
-      <p>Led SwiftUI migration and chatbot feature implementation that increased user engagement from 2M to 10M+. Designed secure auth and real-time API integrations.</p>
+    <div class="glass-card">
+      <h2>Tech Stack</h2>
+      <div class="tech-icons">
+        <img src="https://img.icons8.com/color/96/flutter.png" alt="Flutter">
+        <img src="https://img.icons8.com/color/96/swift.png" alt="Swift">
+        <img src="https://img.icons8.com/color/96/android-os.png" alt="Android">
+        <img src="https://img.icons8.com/color/96/mac-os.png" alt="iOS">
+        <img src="https://img.icons8.com/color/96/kotlin.png" alt="Kotlin">
+        <img src="https://img.icons8.com/color/96/code.png" alt="Architecture">
+      </div>
     </div>
 
-    <div class="project">
-      <h3>🚗 Automotive Client Platforms</h3>
-      <p>Delivered EV apps and in-car infotainment systems for Hyundai, Bentley, and Chrysler. Implemented Bluetooth and CAN Bus integration, diagnostics, and UI layers.</p>
+    <div class="glass-card">
+      <h2>Featured Project</h2>
+      <p><strong>TailorTrack:</strong> A Flutter-based mobile solution for tailoring businesses to manage customer profiles and measurements. Built using MVVC architecture, with offline-first data storage, and a responsive dark UI.</p>
     </div>
-  </section>
 
-  <section>
-    <h2>Resume</h2>
-    <p><a href="#">Download Resume (coming soon)</a></p>
+    <div class="glass-card">
+      <h2>Get In Touch</h2>
+      <p>Open to contract opportunities and freelance collaborations. Reach out at <a href="mailto:nividagautam87@gmail.com" style="color: var(--accent);">nividagautam87@gmail.com</a></p>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Nivida | Built with caffeine and Flutter regret</p>
+    &copy; 2025 Nivida. Built with caffeine, curiosity, and CSS.
   </footer>
 </body>
 </html>
