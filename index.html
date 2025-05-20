@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: linear-gradient(to bottom, #cc6699 0%, #3366ff 100%);
+      --bg: linear-gradient(135deg, #0a0f1b, #1c1f2e);
       --card-bg: rgba(255, 255, 255, 0.05);
       --glass-blur: blur(12px);
-      --accent: #ff5050;
+      --accent: linear-gradient(to right, #cc6699, #3366ff);
       --muted: #eeeeee;
       --white: #ffffff;
     }
@@ -80,27 +80,35 @@
     }
 
     .cta-button {
-      background: var(--accent);
-      color: #000;
+      background: var(--white);
+      background-image: var(--accent);
+      color: #fff;
       padding: 0.6rem 1.5rem;
       border: none;
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-content {
       max-width: 600px;
-      margin-top: -1rem;
+      margin-top: 0rem;
     }
 
     .hero-content h1 {
-      font-size: 3.8rem;
+      font-size: 3.7rem;
       margin-bottom: 1rem;
     }
 
     .hero-content h1 span {
-      color: var(--accent);
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero-content p {
@@ -121,7 +129,11 @@
 
     .stat-block h3 {
       font-size: 1.5rem;
-      color: var(--accent);
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
 
     .stat-block p {
@@ -136,11 +148,14 @@
 
     .buttons a {
       background: var(--accent);
-      color: #000;
+      color: #fff;
       padding: 0.6rem 1.4rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
