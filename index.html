@@ -30,8 +30,8 @@
     .hero {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
       padding: 4rem 2rem;
       min-height: 100vh;
       gap: 3rem;
@@ -145,39 +145,41 @@
 </head>
 <body>
   <section class="hero">
-    <div class="profile-card">
-      <img src="ProfilePic2.jpeg" alt="Profile Picture">
-      <h2>Nivida</h2>
-      <p>Mobile App Developer<br>London, UK</p>
-      <div class="socials">
-        <a href="#">🌐</a>
-        <a href="#">🐦</a>
-        <a href="#">📸</a>
-        <a href="#">✉️</a>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 3rem;">
+      <div class="profile-card">
+        <img src="ProfilePic2.jpeg" alt="Profile Picture">
+        <h2>Nivida</h2>
+        <p>Mobile App Developer<br>London, UK</p>
+        <div class="socials">
+          <a href="#">🌐</a>
+          <a href="#">🐦</a>
+          <a href="#">📸</a>
+          <a href="#">✉️</a>
+        </div>
+        <button class="cta-button">Let’s Talk</button>
       </div>
-      <button class="cta-button">Let’s Talk</button>
-    </div>
 
-    <div class="hero-content">
-      <h1>Coding Reality into <span>Mobile Magic</span></h1>
-      <p>With over a decade of experience building sleek, secure, and scalable mobile apps, I transform product ideas into beautifully crafted digital tools.</p>
-      <div class="stats">
-        <div class="stat-block">
-          <h3>14+</h3>
-          <p>Years Experience</p>
+      <div class="hero-content">
+        <h1>Coding Reality into <span>Mobile Magic</span></h1>
+        <p>With over a decade of experience building sleek, secure, and scalable mobile apps, I transform product ideas into beautifully crafted digital tools.</p>
+        <div class="stats">
+          <div class="stat-block">
+            <h3>14+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-block">
+            <h3>40+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-block">
+            <h3>10+</h3>
+            <p>Clients Worldwide</p>
+          </div>
         </div>
-        <div class="stat-block">
-          <h3>40+</h3>
-          <p>Projects Completed</p>
+        <div class="buttons">
+          <a href="#">Let’s Talk</a>
+          <a href="#">My Work →</a>
         </div>
-        <div class="stat-block">
-          <h3>10+</h3>
-          <p>Clients Worldwide</p>
-        </div>
-      </div>
-      <div class="buttons">
-        <a href="#">Let’s Talk</a>
-        <a href="#">My Work →</a>
       </div>
     </div>
   </section>
