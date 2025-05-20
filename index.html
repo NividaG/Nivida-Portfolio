@@ -19,6 +19,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -79,20 +80,6 @@
       font-size: 1.2rem;
     }
 
-    .cta-button {
-      background: var(--white);
-      background-image: var(--accent);
-      color: #fff;
-      padding: 0.6rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
     .hero-content {
       max-width: 600px;
       margin-top: 0rem;
@@ -141,26 +128,31 @@
       color: var(--muted);
     }
 
-    .buttons {
+    .nav-buttons {
       display: flex;
       gap: 1rem;
+      margin-top: 2rem;
     }
 
-    .buttons a {
-      background: var(--accent);
-      color: #fff;
+    .nav-buttons a {
       padding: 0.6rem 1.4rem;
       border-radius: 8px;
-      text-decoration: none;
       font-weight: 600;
+      text-decoration: none;
+      background: var(--accent);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      border: 1px solid #8882;
+    }
+
+    .nav-buttons a.active {
+      border: 2px solid #ffffff;
     }
   </style>
 </head>
 <body>
-  <section class="hero">
+  <section class="hero" id="about">
     <div class="profile-card">
       <img src="ProfilePic2.jpeg" alt="Profile Picture">
       <h2>Nivida</h2>
@@ -171,7 +163,6 @@
         <a href="#">📸</a>
         <a href="#">✉️</a>
       </div>
-      <button class="cta-button">Let’s Talk</button>
     </div>
 
     <div class="hero-content">
@@ -191,9 +182,12 @@
           <p>Clients Worldwide</p>
         </div>
       </div>
-      <div class="buttons">
-        <a href="#">Let’s Talk</a>
-        <a href="#">My Work →</a>
+      <div class="nav-buttons">
+        <a href="#about" class="active">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </section>
