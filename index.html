@@ -4,68 +4,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nivida | Mobile App Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #121212, #1f1b24);
+      --accent-pink: #ff6ec7;
+      --accent-purple: #b983ff;
+      --accent-blue: #00d4ff;
+      --card-bg: #1e1e1e;
+      --text-light: #e0e0e0;
+      --text-muted: #b0b0b0;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #0d0d0d 30%, #1a002c 60%, #25003a);
-      color: #ffffff;
+      background: var(--bg-gradient);
+      color: var(--text-light);
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
+
     header {
-      background: linear-gradient(135deg, #0d0d0d, #1a002c);
+      background: var(--bg-gradient);
       padding: 3rem 2rem;
       text-align: center;
     }
+
     header h1 {
       font-size: 2.5rem;
-      background: linear-gradient(90deg, #ff00cc, #ff9900, #00ffff);
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple), var(--accent-blue));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: glow 2s ease-in-out infinite alternate;
+      font-weight: 700;
     }
+
     header h2 {
-      color: #ffb347;
+      color: var(--accent-purple);
       font-weight: 500;
       margin-top: 0.5rem;
     }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff00cc; }
-      to { text-shadow: 0 0 20px #00ffff; }
-    }
+
     header img {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       margin-bottom: 1rem;
-      border: 3px solid #ff00cc;
-      box-shadow: 0 0 20px rgba(255, 0, 200, 0.5);
+      border: 2px solid var(--accent-purple);
+      box-shadow: 0 0 10px rgba(185, 131, 255, 0.3);
     }
+
     header p {
-      color: #cccccc;
+      color: var(--text-muted);
     }
+
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     h2 {
-      color: #ff6ec7;
-      text-shadow: 0 0 5px #ff6ec7;
+      color: var(--accent-pink);
       font-weight: 600;
+      margin-bottom: 1rem;
     }
+
     .project {
-      background: #1a1a1a;
-      border: 1px solid #444;
+      background: var(--card-bg);
+      border: 1px solid #333;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(255, 0, 200, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 110, 199, 0.1);
     }
+
     .project h3 {
-      color: #ffb347;
+      color: var(--accent-purple);
+      margin-top: 0;
     }
+
     .tech-icons {
       display: flex;
       flex-wrap: wrap;
@@ -73,28 +91,33 @@
       justify-content: center;
       margin: 2rem auto;
     }
+
     .tech-icons img {
       width: 60px;
       height: 60px;
       object-fit: contain;
-      filter: drop-shadow(0 0 5px #00ffff);
+      filter: drop-shadow(0 0 5px var(--accent-blue));
       transition: transform 0.3s ease;
     }
+
     .tech-icons img:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
+
     a {
-      color: #00ffff;
+      color: var(--accent-blue);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
       background-color: #111;
-      color: #666;
+      color: var(--text-muted);
     }
   </style>
 </head>
