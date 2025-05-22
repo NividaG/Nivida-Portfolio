@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,34 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--white);
+    }
+    header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-buttons a {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      background: var(--accent);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border: 1px solid #8882;
+      transition: border 0.3s;
+    }
+    .nav-buttons a.active {
+      border: 2px solid #ffffff;
     }
     section {
       padding: 6rem 2rem;
@@ -50,20 +79,55 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="nav-buttons">
+      <a href="#about" class="active">About Me</a>
+      <a href="#skills">My Stack</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact Me</a>
+    </div>
+  </header>
+
+  <section class="hero" id="about">
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 3rem;">
+      <div style="max-width: 300px;">
+        <img src="ProfilePic2.jpeg" alt="Profile Picture" style="width: 100%; border-radius: 16px;" />
+      </div>
+      <div style="max-width: 600px;">
+        <h1 style="font-size: 3.7rem; margin-bottom: 1rem;">Coding Reality into <span style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">Mobile Magic</span></h1>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem;">With over a decade of experience building sleek, secure, and scalable mobile apps, I transform product ideas into beautifully crafted digital tools.</p>
+        <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+          <div><h3 style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">14+</h3><p>Years Experience</p></div>
+          <div><h3 style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">40+</h3><p>Projects Completed</p></div>
+          <div><h3 style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">10+</h3><p>Clients Worldwide</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>My Stack</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div><h3>Programming Languages & Frameworks</h3><ul><li>Objective-C, Swift, SwiftUI, Kotlin, Flutter</li></ul></div>
+      <div><h3>Development Environments</h3><ul><li>Visual Studio, Xcode, Android Studio, SQLite Studio, Eclipse</li></ul></div>
+      <div><h3>Testing & Automation</h3><ul><li>Appium, Test Complete, A/B testing, Dynatrace</li></ul></div>
+      <div><h3>Cloud Platforms</h3><ul><li>Sauce Lab, Browser Stack, Perfecto, Eggplant, Firebase</li></ul></div>
+      <div><h3>Architecture & Patterns</h3><ul><li>MVC, MVVM, MVP, Singleton, Façade, Decorator</li></ul></div>
+      <div><h3>CI/CD & Other Tools</h3><ul><li>Jenkins, GitHub Actions, REST APIs, CocoaPods</li></ul></div>
+    </div>
+  </section>
 
   <section id="experience">
     <h2>Professional Experience</h2>
-
     <div class="experience-entry">
       <h3>Senior Lead Software Engineer – Lloyds Banking Group (Virtusa UK)</h3>
       <p>Leading the transition to Swift UI across the LBG app ecosystem, modernizing legacy architecture, and elevating chatbot integrations to improve user engagement and automation efficiency.</p>
     </div>
-
     <div class="experience-entry">
       <h3>Team Lead – NextGen Technology, London</h3>
       <p>Oversaw development of mobile apps focused on automotive connectivity and diagnostics. Specialized in Apple CarPlay, Android Auto, Bluetooth, and network condition analysis for brands like Hyundai, Chrysler, and Bentley.</p>
     </div>
-
     <div class="experience-entry">
       <h3>Senior iOS Developer – A1 Technology, London</h3>
       <p>Delivered mobile solutions for Fortune 500 clients across finance, healthcare, and entertainment. Key contributor on projects for Microsoft, Apple, and Jaguar Land Rover, blending technical depth with cross-functional client engagement.</p>
@@ -72,27 +136,22 @@
 
   <section id="projects">
     <h2>Project Highlights</h2>
-
     <div class="project-entry">
       <h3>ATAM Client App – Hyundai, Microsoft, Bentley</h3>
       <p>Designed a cross-platform diagnostic app for in-car system testing and Bluetooth interoperability. Enabled hardware-assisted automation, remote logs, and Bluetooth signal analysis.</p>
     </div>
-
     <div class="project-entry">
       <h3>Sentinel App – Hyundai, Chrysler</h3>
       <p>Built background monitoring tools for phone connectivity. Collected real-time data like GPS, cellular strength, Wi-Fi and Bluetooth diagnostics, feeding into test logs for deep analysis.</p>
     </div>
-
     <div class="project-entry">
       <h3>DTRP (Phase 1 & 2) – Hyundai Europe</h3>
       <p>Developed tools to measure in-car data transfer speed and GPS reachability. Real-time data visualization through Google Maps integration, backed by CSV and Core Data storage.</p>
     </div>
-
     <div class="project-entry">
       <h3>TestOnGo – Fiat Chrysler Europe</h3>
       <p>A mobile testing app with text-to-speech and speech recognition for IVI testing. Managed real-time multi-user inputs and Firebase backend integration.</p>
     </div>
-
     <div class="project-entry">
       <h3>Portfolio Project – Tailoring App (Flutter)</h3>
       <p>Developed a standalone Flutter application for a local tailoring firm. Included size specifications, employee tracking, dark mode, and local data storage with MVVM architecture.</p>
@@ -103,6 +162,5 @@
     <h2>Contact Me</h2>
     <p>You can reach me directly at <a href="mailto:nividagautam87@gmail.com" style="color: #fff; text-decoration: underline;">nividagautam87@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/nivida-gautam-mobile-application-ios-team-lead" target="_blank" style="color: #fff; text-decoration: underline;">LinkedIn</a>.</p>
   </section>
-
 </body>
 </html>
