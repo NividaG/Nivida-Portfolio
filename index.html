@@ -53,6 +53,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       border: 1px solid #8882;
+      transition: border 0.3s;
     }
 
     .nav-buttons a.active {
@@ -301,5 +302,26 @@
     <h2>Contact Me</h2>
     <p>This is the Contact section. Add email, LinkedIn, or a lovely form if you’re feeling fancy.</p>
   </section>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-buttons a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
