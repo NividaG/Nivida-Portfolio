@@ -14,314 +14,91 @@
       --muted: #eeeeee;
       --white: #ffffff;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--white);
     }
-
-    header {
-      display: flex;
-      justify-content: flex-end;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 10;
-    }
-
-    .nav-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-buttons a {
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      background: var(--accent);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      border: 1px solid #8882;
-      transition: border 0.3s;
-    }
-
-    .nav-buttons a.active {
-      border: 2px solid #ffffff;
-    }
-
     section {
       padding: 6rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
-
-    .hero {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 4rem;
-      flex-wrap: wrap;
-      min-height: 100vh;
-    }
-
-    .profile-card {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 2rem;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.03);
-    }
-
-    .profile-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      margin-bottom: 1.2rem;
-    }
-
-    .profile-card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .profile-card p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .socials a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    .hero-content {
-      max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-content h1 {
-      font-size: 3.7rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-content h1 span {
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-content p {
-      color: var(--muted);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .stat-block {
-      text-align: center;
-    }
-
-    .stat-block h3 {
-      font-size: 1.5rem;
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .stat-block p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .skill-block {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-    }
-
-    .skill-block h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-      color: var(--white);
-    }
-
-    .skill-block ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .skill-block ul li {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: var(--white);
     }
-
-    p {
-      font-size: 1.1rem;
+    .experience-entry, .project-entry {
+      margin-bottom: 2.5rem;
+    }
+    .experience-entry h3, .project-entry h3 {
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+    .experience-entry p, .project-entry p {
+      font-size: 1rem;
       color: var(--muted);
+      margin-top: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav-buttons">
-      <a href="#about" class="active">About Me</a>
-      <a href="#skills">My Stack</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact Me</a>
-    </div>
-  </header>
 
-  <section class="hero" id="about">
-    <div class="profile-card">
-      <img src="ProfilePic2.jpeg" alt="Profile Picture">
-      <h2>Nivida</h2>
-      <p>Mobile App Developer<br>London, UK</p>
-      <div class="socials">
-        <a href="#">🌐</a>
-        <a href="#">🐦</a>
-        <a href="#">📸</a>
-        <a href="#">✉️</a>
-      </div>
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="experience-entry">
+      <h3>Senior Lead Software Engineer – Lloyds Banking Group (Virtusa UK)</h3>
+      <p>Leading the transition to Swift UI across the LBG app ecosystem, modernizing legacy architecture, and elevating chatbot integrations to improve user engagement and automation efficiency.</p>
     </div>
 
-    <div class="hero-content">
-      <h1>Coding Reality into <span>Mobile Magic</span></h1>
-      <p>With over a decade of experience building sleek, secure, and scalable mobile apps, I transform product ideas into beautifully crafted digital tools.</p>
-      <div class="stats">
-        <div class="stat-block">
-          <h3>14+</h3>
-          <p>Years Experience</p>
-        </div>
-        <div class="stat-block">
-          <h3>40+</h3>
-          <p>Projects Completed</p>
-        </div>
-        <div class="stat-block">
-          <h3>10+</h3>
-          <p>Clients Worldwide</p>
-        </div>
-      </div>
+    <div class="experience-entry">
+      <h3>Team Lead – NextGen Technology, London</h3>
+      <p>Oversaw development of mobile apps focused on automotive connectivity and diagnostics. Specialized in Apple CarPlay, Android Auto, Bluetooth, and network condition analysis for brands like Hyundai, Chrysler, and Bentley.</p>
     </div>
-  </section>
 
-  <section id="skills">
-    <h2>My Stack</h2>
-    <div class="skills-grid">
-      <div class="skill-block">
-        <h3>Programming Languages & Frameworks</h3>
-        <ul>
-          <li>Objective-C, Swift, SwiftUI</li>
-          <li>Kotlin, Flutter</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>Development Environments</h3>
-        <ul>
-          <li>Visual Studio, Xcode, Android Studio</li>
-          <li>SQLite Studio, Eclipse</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>Cloud & Testing Platforms</h3>
-        <ul>
-          <li>Firebase, Sauce Labs, Browser Stack</li>
-          <li>Perfecto, Eggplant</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>Architecture & Patterns</h3>
-        <ul>
-          <li>MVC, MVVM, MVP</li>
-          <li>Singleton, Façade, Decorator</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h3>Tools & Extras</h3>
-        <ul>
-          <li>Jenkins, GitHub Actions</li>
-          <li>API Integration, Appium, Scrum</li>
-          <li>Encryption, Sockets, Dynatrace</li>
-        </ul>
-      </div>
+    <div class="experience-entry">
+      <h3>Senior iOS Developer – A1 Technology, London</h3>
+      <p>Delivered mobile solutions for Fortune 500 clients across finance, healthcare, and entertainment. Key contributor on projects for Microsoft, Apple, and Jaguar Land Rover, blending technical depth with cross-functional client engagement.</p>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
-    <p>This is the Projects section. Drop your amazing portfolio links and app screenshots here.</p>
+    <h2>Project Highlights</h2>
+
+    <div class="project-entry">
+      <h3>ATAM Client App – Hyundai, Microsoft, Bentley</h3>
+      <p>Designed a cross-platform diagnostic app for in-car system testing and Bluetooth interoperability. Enabled hardware-assisted automation, remote logs, and Bluetooth signal analysis.</p>
+    </div>
+
+    <div class="project-entry">
+      <h3>Sentinel App – Hyundai, Chrysler</h3>
+      <p>Built background monitoring tools for phone connectivity. Collected real-time data like GPS, cellular strength, Wi-Fi and Bluetooth diagnostics, feeding into test logs for deep analysis.</p>
+    </div>
+
+    <div class="project-entry">
+      <h3>DTRP (Phase 1 & 2) – Hyundai Europe</h3>
+      <p>Developed tools to measure in-car data transfer speed and GPS reachability. Real-time data visualization through Google Maps integration, backed by CSV and Core Data storage.</p>
+    </div>
+
+    <div class="project-entry">
+      <h3>TestOnGo – Fiat Chrysler Europe</h3>
+      <p>A mobile testing app with text-to-speech and speech recognition for IVI testing. Managed real-time multi-user inputs and Firebase backend integration.</p>
+    </div>
+
+    <div class="project-entry">
+      <h3>Portfolio Project – Tailoring App (Flutter)</h3>
+      <p>Developed a standalone Flutter application for a local tailoring firm. Included size specifications, employee tracking, dark mode, and local data storage with MVVM architecture.</p>
+    </div>
+
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>This is the Contact section. Add email, LinkedIn, or a lovely form if you’re feeling fancy.</p>
-  </section>
-
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-buttons a");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 80;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
-      });
-    });
-  </script>
 </body>
 </html>
