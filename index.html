@@ -165,6 +165,36 @@
       color: var(--muted);
     }
 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-block {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .skill-block h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--white);
+    }
+
+    .skill-block ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skill-block ul li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
@@ -222,7 +252,44 @@
 
   <section id="skills">
     <h2>My Stack</h2>
-    <p>I build seamless mobile experiences using Flutter, Swift, Kotlin, and modern app architecture to deliver polished iOS and Android solutions.</p>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <h3>Programming Languages & Frameworks</h3>
+        <ul>
+          <li>Objective-C, Swift, SwiftUI</li>
+          <li>Kotlin, Flutter</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3>Development Environments</h3>
+        <ul>
+          <li>Visual Studio, Xcode, Android Studio</li>
+          <li>SQLite Studio, Eclipse</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3>Cloud & Testing Platforms</h3>
+        <ul>
+          <li>Firebase, Sauce Labs, Browser Stack</li>
+          <li>Perfecto, Eggplant</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3>Architecture & Patterns</h3>
+        <ul>
+          <li>MVC, MVVM, MVP</li>
+          <li>Singleton, Façade, Decorator</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3>Tools & Extras</h3>
+        <ul>
+          <li>Jenkins, GitHub Actions</li>
+          <li>API Integration, Appium, Scrum</li>
+          <li>Encryption, Sockets, Dynatrace</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="projects">
