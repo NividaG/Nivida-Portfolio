@@ -28,6 +28,37 @@
       color: var(--white);
     }
 
+    header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-buttons a {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      background: var(--accent);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border: 1px solid #8882;
+    }
+
+    .nav-buttons a.active {
+      border: 2px solid #ffffff;
+    }
+
     section {
       padding: 6rem 2rem;
       max-width: 1200px;
@@ -134,29 +165,6 @@
       color: var(--muted);
     }
 
-    .nav-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .nav-buttons a {
-      padding: 0.6rem 1.4rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      background: var(--accent);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      border: 1px solid #8882;
-    }
-
-    .nav-buttons a.active {
-      border: 2px solid #ffffff;
-    }
-
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
@@ -170,6 +178,15 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="nav-buttons">
+      <a href="#about" class="active">About Me</a>
+      <a href="#skills">My Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact Me</a>
+    </div>
+  </header>
+
   <section class="hero" id="about">
     <div class="profile-card">
       <img src="ProfilePic2.jpeg" alt="Profile Picture">
@@ -200,18 +217,12 @@
           <p>Clients Worldwide</p>
         </div>
       </div>
-      <div class="nav-buttons">
-        <a href="#about" class="active">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact Me</a>
-      </div>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <p>This is the Skills section. Add your best frameworks, libraries, tools, and wizardry here.</p>
+    <h2>My Stack</h2>
+    <p>I build seamless mobile experiences using Flutter, Swift, Kotlin, and modern app architecture to deliver polished iOS and Android solutions.</p>
   </section>
 
   <section id="projects">
