@@ -13,6 +13,7 @@
       --accent: linear-gradient(to right, #cc6699, #3366ff);
       --muted: #eeeeee;
       --white: #ffffff;
+      --border: 1px solid rgba(255,255,255,0.12);
     }
     * {
       margin: 0;
@@ -26,28 +27,28 @@
       color: var(--white);
     }
     header {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-wrap: wrap;
-     gap: 0.5rem;
-     padding: 1rem;
-     position: sticky;
-     top: 0;
-     background: var(--bg);
-     z-index: 10;
-     }
-
-     .nav-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+      border-bottom: var(--border);
+      backdrop-filter: var(--glass-blur);
+    }
+    .nav-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       justify-content: center;
-     }
-
+    }
     .nav-buttons a {
       padding: 0.5rem 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 600;
       text-decoration: none;
       background: var(--accent);
@@ -55,13 +56,12 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       border: 1px solid #8882;
-      transition: border 0.3s;
+      transition: border 0.3s, transform 0.2s;
       white-space: nowrap;
     }
+    .nav-buttons a:hover { transform: translateY(-1px); border: 1px solid rgba(255,255,255,0.25); }
+    .nav-buttons a.active { border: 2px solid #ffffff; }
 
-    .nav-buttons a.active {
-      border: 2px solid #ffffff;
-    }
     section {
       scroll-margin-top: 100px;
       padding: 6rem 2rem;
@@ -84,140 +84,396 @@
       font-size: 1rem;
       color: var(--muted);
       margin-top: 0.5rem;
+      line-height: 1.7;
     }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: var(--glass-blur);
+      border: var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      margin: 0.35rem 0.35rem 0 0;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .proof-item img {
+      width: 100%;
+      border-radius: 14px;
+      border: var(--border);
+      display: block;
+      background: rgba(255,255,255,0.03);
+    }
+    .proof-item h4 {
+      margin-top: 0.9rem;
+      font-size: 1.15rem;
+    }
+    .proof-item p {
+      margin-top: 0.4rem;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+
+    .hero-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0 0;
+      flex-wrap: wrap;
+    }
+    .stat {
+      min-width: 160px;
+    }
+    .stat h3 {
+      font-size: 2rem;
+      margin-bottom: 0.15rem;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    .stat p { color: var(--muted); }
+
     @media (max-width: 600px) {
-  .nav-buttons a {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-}
+      .nav-buttons a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="nav-buttons">
-      <a href="#about" class="active">About Me</a>
-      <a href="#skills">My Stack</a>
+      <a href="#about" class="active">About</a>
+      <a href="#ai-cloud">AI & Cloud</a>
+      <a href="#skills">Stack</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact Me</a>
+      <a href="#projects">Mobile Projects</a>
+      <a href="#contact">Contact</a>
     </div>
   </header>
 
+  <!-- HERO / ABOUT -->
   <section class="hero" id="about">
-    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 3rem;">
-      <div style="max-width: 300px;">
-        <img src="ProfilePic2.jpeg" alt="Profile Picture" style="width: 100%; border-radius: 16px;" />
-        <h1 style="font-size: 3rem; color: var(--muted); margin-bottom: 0.5rem; white-space: nowrap;">
-        Hi, I'm Nivida
+    <div class="hero-wrap">
+      <div style="max-width: 320px;">
+        <img src="ProfilePic2.jpeg" alt="Profile Picture" style="width: 100%; border-radius: 16px; border: var(--border);" />
+        <h1 style="font-size: 3rem; color: var(--muted); margin-top: 1rem; margin-bottom: 0.25rem; white-space: nowrap;">
+          Hi, I'm Nivida
         </h1>
+        <p style="color: var(--muted); line-height: 1.7;">
+          Technical Architect with a strong <strong>mobile foundation</strong> and a current focus on <strong>AI-enabled cloud platforms</strong>.
+        </p>
       </div>
-      <div style="max-width: 600px;">
-        <h1 style="font-size: 3.7rem; margin-bottom: 1rem;">Coding Reality into <span style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">Mobile Magic</span></h1>
-        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem;">With over a decade of experience building sleek, secure, and scalable mobile apps, I transform product ideas into beautifully crafted digital tools.</p>
-        <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
-          <div><h3 style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">14+</h3><p>Years Experience</p></div>
-          <div><h3 style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">40+</h3><p>Projects Completed</p></div>
-          <div><h3 style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">10+</h3><p>Clients Worldwide</p></div>
+
+      <div style="max-width: 680px;">
+        <h1 style="font-size: 3.4rem; margin-bottom: 1rem; line-height: 1.08;">
+          Building <span style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
+          AI-enabled Cloud Platforms</span> with a Mobile-First mindset
+        </h1>
+
+        <p style="color: var(--muted); font-size: 1.08rem; line-height: 1.75; margin-bottom: 1.5rem;">
+          With <strong>15+ years</strong> of experience across mobile, backend, and cloud ecosystems, I design end-to-end platforms that connect
+          <strong>mobile applications</strong> to <strong>cloud-native services</strong>, data pipelines, and intelligent processing layers.
+          In recent years, my focus has shifted toward <strong>AI orchestration and evaluation workflows</strong>—building systems that coordinate services,
+          evaluate outputs, and expose secure APIs for real-world products.
+        </p>
+
+        <div class="card">
+          <div class="pill">🤖 AI Orchestration & Evaluation</div>
+          <div class="pill">☁️ Cloud-Native Backend (AWS/GCP)</div>
+          <div class="pill">🔌 API-First Platform Design</div>
+          <div class="pill">📱 iOS / SwiftUI / Mobile Architecture</div>
+          <div class="pill">📊 Data Pipelines & Observability</div>
+          <div class="pill">🔐 Secure-by-Design Systems</div>
+
+          <div class="stat-row">
+            <div class="stat"><h3>15+</h3><p>Years Experience</p></div>
+            <div class="stat"><h3>40+</h3><p>Projects Delivered</p></div>
+            <div class="stat"><h3>10+</h3><p>Clients / Domains</p></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- AI & CLOUD PLATFORM SECTION (NEW) -->
+  <section id="ai-cloud">
+    <h2>AI & Cloud Platforms</h2>
+
+    <div class="card" style="margin-top: 1.25rem;">
+      <h3 style="font-size: 1.6rem;">AI Orchestration Platform (Architecture & Practical Proof)</h3>
+      <p style="color: var(--muted); margin-top: 0.5rem; line-height: 1.75;">
+        I design platforms that coordinate multiple backend services (and AI services where applicable), apply evaluation logic (quality/latency/cost),
+        and expose results through secure APIs for mobile and web clients. Below are sample artefacts that demonstrate practical system thinking.
+        <br><br>
+        <strong>Note:</strong> Visuals are either personal demo artefacts or generalised/sanitised representations to protect confidentiality.
+      </p>
+
+      <div class="proof-grid">
+        <div class="proof-item card">
+          <img src="assets/ai-architecture-diagram.png" alt="AI Orchestration Architecture Diagram (placeholder)" />
+          <h4>1) Architecture Diagram</h4>
+          <p>
+            End-to-end flow: <strong>Client → Orchestrator → Multiple Services/Agents → Evaluator → API</strong>.
+            Highlights async execution, scoring, routing decisions, and observability.
+          </p>
+        </div>
+
+        <div class="proof-item card">
+          <img src="assets/evaluation-scoreboard.png" alt="Evaluation Scoreboard (placeholder)" />
+          <h4>2) Evaluation Scoreboard</h4>
+          <p>
+            Practical example of comparing outputs using <strong>quality, latency, and cost</strong> signals. This demonstrates how decisions can be
+            automated and governed in production systems.
+          </p>
+        </div>
+
+        <div class="proof-item card">
+          <img src="assets/cloud-pipeline.png" alt="Cloud Pipeline / Workflow (placeholder)" />
+          <h4>3) Cloud Workflow / Pipeline</h4>
+          <p>
+            Example of a backend workflow for data ingestion and processing (e.g., Python pipelines / orchestration). Shows how platform design supports
+            analytics and intelligent processing at scale.
+          </p>
+        </div>
+
+        <div class="proof-item card">
+          <img src="assets/observability-metrics.png" alt="Observability Metrics (placeholder)" />
+          <h4>4) Observability & Governance</h4>
+          <p>
+            Metrics & logs view for monitoring system behaviour: latency, errors, throughput, and cost signals—critical for running AI-enabled platforms reliably.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <div class="pill">Python</div>
+        <div class="pill">AWS / GCP</div>
+        <div class="pill">API Gateway</div>
+        <div class="pill">Airflow / Orchestration</div>
+        <div class="pill">REST / OAuth2</div>
+        <div class="pill">Telemetry / Logging</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
   <section id="skills">
     <h2>My Stack</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-      <div><h3>Programming Languages & Frameworks</h3><ul><li>Objective-C, Swift, SwiftUI, Kotlin, Flutter</li></ul></div>
-      <div><h3>Development Environments</h3><ul><li>Visual Studio, Xcode, Android Studio, SQLite Studio, Eclipse</li></ul></div>
-      <div><h3>Testing & Automation</h3><ul><li>Appium, Test Complete, A/B testing, Dynatrace</li></ul></div>
-      <div><h3>Cloud Platforms</h3><ul><li>Sauce Lab, Browser Stack, Perfecto, Eggplant, Firebase, GCP</li></ul></div>
-      <div><h3>Architecture & Patterns</h3><ul><li>MVC, MVVM, MVP, Singleton, Façade, Decorator</li></ul></div>
-      <div><h3>CI/CD & Other Tools</h3><ul><li>Jenkins, GitHub Actions, REST APIs, CocoaPods</li></ul></div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1.25rem;">
+      <div class="card">
+        <h3>Mobile Engineering</h3>
+        <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
+          <li>Swift, SwiftUI, Objective-C</li>
+          <li>Combine, MVVM, Modular architecture</li>
+          <li>Flutter (working experience)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Backend & APIs</h3>
+        <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
+          <li>REST APIs, JSON, Swagger/OpenAPI</li>
+          <li>OAuth2 / token-based access patterns</li>
+          <li>Python-based services & utilities</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Cloud & Data</h3>
+        <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
+          <li>AWS, GCP, Firebase</li>
+          <li>Serverless patterns (Lambda / Cloud Functions)</li>
+          <li>ETL / pipelines, workflow orchestration concepts</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Testing, CI/CD & Quality</h3>
+        <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
+          <li>Appium, XCTest, automation frameworks</li>
+          <li>Jenkins, GitHub Actions</li>
+          <li>Monitoring / diagnostics (e.g., Dynatrace)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Architecture & Patterns</h3>
+        <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
+          <li>Microservices / cloud-native design concepts</li>
+          <li>MVC, MVVM, MVP</li>
+          <li>Integration patterns & reliability thinking</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Tools</h3>
+        <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
+          <li>Xcode, Android Studio</li>
+          <li>Postman, Git, CocoaPods</li>
+          <li>Docker (familiarity)</li>
+        </ul>
+      </div>
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
   <section id="experience">
     <h2>Professional Experience</h2>
-    <div class="experience-entry">
+
+    <div class="experience-entry card">
       <h3>Senior Lead Software Engineer – Lloyds Banking Group (Virtusa UK)</h3>
-      <p>Leading the transition to Swift UI across the LBG app ecosystem, modernizing legacy architecture, and elevating chatbot integrations to improve user engagement and automation efficiency.</p>
+      <p>
+        Led modernization across the LBG iOS ecosystem, including <strong>SwiftUI migration</strong> and platform architecture improvements.
+        Partnered across teams on <strong>API-driven integrations</strong> and evolving intelligent experiences (e.g., chatbot journeys) with a focus on stability and observability.
+      </p>
+      <div style="margin-top: 0.75rem;">
+        <span class="pill">SwiftUI</span><span class="pill">Platform Architecture</span><span class="pill">API Integrations</span><span class="pill">Reliability</span>
+      </div>
     </div>
-    <div class="experience-entry">
+
+    <div class="experience-entry card">
       <h3>Team Lead – NextGen Technology</h3>
-      <p>Oversaw development of mobile apps focused on automotive connectivity and diagnostics. Specialized in Apple CarPlay, Android Auto, Bluetooth, and network condition analysis for brands like Hyundai, Chrysler, and Bentley.</p>
+      <p>
+        Led development of mobile platforms for automotive connectivity and diagnostics. Designed systems for telemetry capture and analysis
+        (Bluetooth/network quality), connecting mobile clients with data pipelines used in operational and diagnostic workflows.
+      </p>
+      <div style="margin-top: 0.75rem;">
+        <span class="pill">Connectivity</span><span class="pill">Telemetry</span><span class="pill">Diagnostics</span><span class="pill">Cross-platform</span>
+      </div>
     </div>
-    <div class="experience-entry">
+
+    <div class="experience-entry card">
       <h3>Senior iOS Developer – A1 Technology</h3>
-      <p>Delivered mobile solutions for Fortune 500 clients across finance, healthcare, and entertainment. Key contributor on projects for Microsoft, Apple, and Jaguar Land Rover, blending technical depth with cross-functional client engagement.</p>
+      <p>
+        Delivered iOS solutions across finance, healthcare, and entertainment. Built modular app foundations and integration layers that interacted with backend services,
+        ensuring performance, security-aware handling, and reliable user experiences.
+      </p>
+      <div style="margin-top: 0.75rem;">
+        <span class="pill">iOS Architecture</span><span class="pill">Backend Integration</span><span class="pill">Performance</span>
+      </div>
     </div>
   </section>
 
- <section id="projects">
-  <h2>Project Highlights</h2>
+  <!-- MOBILE PROJECTS (KEEP + LIGHTLY REFRAME) -->
+  <section id="projects">
+    <h2>Mobile Project Highlights</h2>
 
-  <div class="project-entry">
-    <h3>🔒 LBG App </h3>
-    <p>
-      Spearheaded modernization of LBG's core banking app by leading the migration from UIKit to <strong>SwiftUI</strong>. 
-      Enhanced chatbot systems with updated architecture and improved NLP responsiveness. 
-      Oversaw performance tuning and UI/UX consistency across the mobile banking platform—one of the UK’s most-used apps.
+    <div class="project-entry card">
+      <h3>🔒 LBG App</h3>
+      <p>
+        Spearheaded modernization of LBG's core banking app by leading the migration from UIKit to <strong>SwiftUI</strong>.
+        Improved architecture supporting intelligent customer journeys (e.g., chatbot flows) and strengthened performance and UI consistency across the platform.
+      </p>
+      <ul style="color: var(--muted); margin-top: 0.8rem; line-height: 1.85;">
+        <li>📱 Modular SwiftUI architecture (SwiftUI, Combine, MVVM patterns)</li>
+        <li>🔌 API-driven integrations and platform stability improvements</li>
+        <li>📊 Performance & reliability focus for high-traffic user journeys</li>
+      </ul>
+    </div>
+
+    <div class="project-entry card">
+      <h3>🧠 ATAM Client App – Hyundai, Bentley</h3>
+      <p>
+        Cross-platform diagnostic solution for in-car system testing. Delivered automation integration, real-time logging,
+        and Bluetooth signal diagnostics across iOS, Android, and Windows platforms.
+      </p>
+    </div>
+
+    <div class="project-entry card">
+      <h3>📶 Sentinel App – Hyundai, Chrysler</h3>
+      <p>
+        Background monitoring tool to collect signal metrics during field testing.
+        Logged GPS, cellular strength, and Wi-Fi/Bluetooth signals in real time for QA and engineering teams.
+      </p>
+    </div>
+
+    <div class="project-entry card">
+      <h3>🚗 DTRP Phase 1 & 2 – Hyundai Europe</h3>
+      <p>
+        Performance measurement tools to analyze data transfer rates inside IVI systems.
+        Visualized network quality using Google Maps integration and local telemetry.
+      </p>
+    </div>
+
+    <div class="project-entry card">
+      <h3>🗣️ TestOnGo – Fiat Chrysler Europe</h3>
+      <p>
+        Voice-guided testing app with TTS & SR capabilities for automotive QA teams.
+        Integrated Firebase backend and dynamic form generation using Excel-driven templates.
+      </p>
+    </div>
+
+    <div class="project-entry card">
+      <h3>🧵 Custom Tailoring App (Flutter)</h3>
+      <p>
+        Standalone Flutter app for a tailoring business. Features included measurement logging, employee tracking,
+        dark mode, and MVVM architecture for local-first performance.
+      </p>
+    </div>
+
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--muted);">
+      *These projects were developed as part of my roles in respective organizations. Descriptions include only public or generalized information.*
     </p>
-    <ul style="color: var(--muted); margin-top: 0.5rem;">
-      <li>📱 Modernized legacy systems using SwiftUI, Combine, and modular architecture.</li>
-      <li>🤖 Integrated improved chatbot intelligence within the iOS platform.</li>
-      <li>🔁 Ensured seamless rollout without disrupting over 10M+ users.</li>
-    </ul>
-  </div>
+  </section>
 
-  <div class="project-entry">
-    <h3>🧠 ATAM Client App – Hyundai, Bentley</h3>
-    <p>
-      Designed a cross-platform diagnostic solution for in-car system testing. Delivered automation integration, real-time logging, and Bluetooth signal diagnostics across iOS, Android, and Windows platforms.
-    </p>
-  </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 style="text-align: center;">Contact Me</h2>
+    <div class="card" style="text-align: center; max-width: 700px; margin: auto;">
+      <p style="margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--muted); line-height: 1.75;">
+        Interested in building AI-enabled platforms, cloud backends, or mobile experiences? Let’s connect.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem;">
+        <a href="mailto:nividagautam87@gmail.com" style="padding: 0.8rem 1.5rem; background: linear-gradient(to right, #cc6699, #3366ff); color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">Email</a>
+        <a href="https://www.linkedin.com/in/nivida-gautam-mobile-application-ios-team-lead" target="_blank" style="padding: 0.8rem 1.5rem; background: linear-gradient(to right, #cc6699, #3366ff); color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">LinkedIn</a>
+        <a href="https://github.com/NividaG" target="_blank" style="padding: 0.8rem 1.5rem; background: linear-gradient(to right, #cc6699, #3366ff); color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">GitHub</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="project-entry">
-    <h3>📶 Sentinel App – Hyundai, Chrysler</h3>
-    <p>
-      Developed a background monitoring tool to collect signal metrics during automotive field testing. Logged GPS, cellular strength, Wi-Fi/Bluetooth signals in real time for quality assurance teams.
-    </p>
-  </div>
+  <script>
+    // Optional: simple active link highlight (keeps your current style)
+    const links = document.querySelectorAll('.nav-buttons a');
+    const sections = [...document.querySelectorAll('section')];
 
-  <div class="project-entry">
-    <h3>🚗 DTRP Phase 1 & 2 – Hyundai Europe</h3>
-    <p>
-      Built performance measurement tools to analyze data transfer rates inside IVI systems. Visualized real-time network quality using Google Maps integration and local telemetry.
-    </p>
-  </div>
-
-  <div class="project-entry">
-    <h3>🗣️ TestOnGo – Fiat Chrysler Europe</h3>
-    <p>
-      A voice-guided testing app with TTS & SR capabilities for automotive QA teams. Integrated Firebase backend and dynamic form generation using Excel-driven test templates.
-    </p>
-  </div>
-
-  <div class="project-entry">
-    <h3>🧵 Mobile App solution for custom tailoring services - (Flutter) </h3>
-    <p>
-      Created a standalone Flutter app for elite taloring business. Features included measurement logging, employee tracking, dark mode, and MVVM architecture for local-first performance.
-    </p>
-  </div>
-
-  <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--muted);">
-    *These projects were developed as part of my roles in respective organizations. Descriptions include only public or generalized information.*
-  </p>
-</section>
-
- <section id="contact">
-  <h2 style="text-align: center;">Contact Me</h2>
-  <div style="text-align: center; max-width: 600px; margin: auto; background: var(--card-bg); backdrop-filter: var(--glass-blur); padding: 2rem; border-radius: 16px;">
-    <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
-    Curious to collaborate? Have an idea or just want to say hi? Let’s connect and make something meaningful. </p>
-    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem;">
-  <a href="mailto:nividagautam87@gmail.com" style="padding: 0.8rem 1.5rem; background: linear-gradient(to right, #cc6699, #3366ff); color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">Email</a>
-  <a href="https://www.linkedin.com/in/nivida-gautam-mobile-application-ios-team-lead" target="_blank" style="padding: 0.8rem 1.5rem; background: linear-gradient(to right, #cc6699, #3366ff); color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">LinkedIn</a>
-  <a href="https://github.com/NividaG" target="_blank" style="padding: 0.8rem 1.5rem; background: linear-gradient(to right, #cc6699, #3366ff); color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">GitHub</a>
-</div>
-  </div>
-</section>
+    function setActiveLink() {
+      const scrollPos = window.scrollY + 120;
+      let current = sections[0].id;
+      for (const sec of sections) {
+        if (sec.offsetTop <= scrollPos) current = sec.id;
+      }
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    }
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+  </script>
+</body>
+</html>
