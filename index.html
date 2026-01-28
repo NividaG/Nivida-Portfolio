@@ -59,8 +59,13 @@
       transition: border 0.3s, transform 0.2s;
       white-space: nowrap;
     }
-    .nav-buttons a:hover { transform: translateY(-1px); border: 1px solid rgba(255,255,255,0.25); }
-    .nav-buttons a.active { border: 2px solid #ffffff; }
+    .nav-buttons a:hover {
+      transform: translateY(-1px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .nav-buttons a.active {
+      border: 2px solid #ffffff;
+    }
 
     section {
       scroll-margin-top: 100px;
@@ -107,30 +112,6 @@
       margin: 0.35rem 0.35rem 0 0;
     }
 
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.25rem;
-    }
-    .proof-item img {
-      width: 100%;
-      border-radius: 14px;
-      border: var(--border);
-      display: block;
-      background: rgba(255,255,255,0.03);
-    }
-    .proof-item h4 {
-      margin-top: 0.9rem;
-      font-size: 1.15rem;
-    }
-    .proof-item p {
-      margin-top: 0.4rem;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 0.98rem;
-    }
-
     .hero-wrap {
       display: flex;
       justify-content: center;
@@ -167,20 +148,21 @@
     }
   </style>
 </head>
+
 <body>
+  <!-- NAV -->
   <header>
     <div class="nav-buttons">
       <a href="#about" class="active">About</a>
-      <a href="#ai-cloud">AI & Cloud</a>
+      <a href="#architecture">Architecture</a>
       <a href="#skills">Stack</a>
       <a href="#experience">Experience</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#projects">Mobile Projects</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </header>
 
-  <!-- HERO / ABOUT -->
+  <!-- ABOUT -->
   <section class="hero" id="about">
     <div class="hero-wrap">
       <div style="max-width: 320px;">
@@ -189,30 +171,28 @@
           Hi, I'm Nivida
         </h1>
         <p style="color: var(--muted); line-height: 1.7;">
-          Technical Architect with a strong <strong>mobile foundation</strong> and a current focus on <strong>AI-enabled cloud platforms</strong>.
+          Technical Architect with 15+ years of experience across mobile, backend, and cloud platforms.
         </p>
       </div>
 
       <div style="max-width: 680px;">
-        <h1 style="font-size: 3.4rem; margin-bottom: 1rem; line-height: 1.08;">
-          Architecting<span style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
-          AI-enabled cloud platforms</span> and scalable mobile systems
+        <h1 style="font-size: 3.2rem; margin-bottom: 1rem; line-height: 1.08;">
+          Designing <span style="background: var(--accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
+          cloud-native platforms</span> and scalable systems
         </h1>
 
         <p style="color: var(--muted); font-size: 1.08rem; line-height: 1.75; margin-bottom: 1.5rem;">
-          With <strong>15+ years</strong> of experience across mobile, backend, and cloud ecosystems, I design end-to-end platforms that connect
-          <strong>mobile applications</strong> to <strong>cloud-native services</strong>, data pipelines, and intelligent processing layers.
-          In recent years, my focus has shifted toward <strong>AI orchestration and evaluation workflows</strong>—building systems that coordinate services,
-          evaluate outputs, and expose secure APIs for real-world products.
+          I design end-to-end cloud platforms focused on secure ingestion, decoupled processing, workflow orchestration, scalable storage,
+          and reliable delivery through APIs and services. In recent years, I’ve also worked on integrating intelligent processing workflows
+          as part of modern cloud systems—while keeping solutions production-ready, observable, and cost-aware.
         </p>
 
         <div class="card">
-          <div class="pill">🤖 AI Orchestration & Evaluation</div>
           <div class="pill">☁️ Cloud-Native Backend (AWS/GCP)</div>
           <div class="pill">🔌 API-First Platform Design</div>
-          <div class="pill">📱 iOS / SwiftUI / Mobile Architecture</div>
           <div class="pill">📊 Data Pipelines & Observability</div>
-          <div class="pill">🔐 Secure-by-Design Systems</div>
+          <div class="pill">🔐 Security & Governance</div>
+          <div class="pill">🧩 Architecture & System Design</div>
 
           <div class="stat-row">
             <div class="stat"><h3>15+</h3><p>Years Experience</p></div>
@@ -224,63 +204,37 @@
     </div>
   </section>
 
-  <!-- AI & CLOUD PLATFORM SECTION (NEW) -->
-  <section id="ai-cloud">
-    <h2>AI & Cloud Platforms</h2>
+  <!-- ARCHITECTURE (KNOWLEDGE SECTION) -->
+  <section id="architecture">
+    <h2>Cloud Platform Architecture</h2>
 
-    <div class="card" style="margin-top: 1.25rem;">
-      <h3 style="font-size: 1.6rem;">AI Orchestration Platform (Architecture & Practical Proof)</h3>
-      <p style="color: var(--muted); margin-top: 0.5rem; line-height: 1.75;">
-        I design platforms that coordinate multiple backend services (and AI services where applicable), apply evaluation logic (quality/latency/cost),
-        and expose results through secure APIs for mobile and web clients. Below are sample artefacts that demonstrate practical system thinking.
-        <br><br>
-        <strong>Note:</strong> Visuals are either personal demo artefacts or generalised/sanitised representations to protect confidentiality.
+    <div class="card">
+      <h3>Reference Architecture – Cloud-Native Processing Platform</h3>
+
+      <p style="color: var(--muted); line-height: 1.75; margin-top: 0.6rem;">
+        This diagram represents a generic cloud-native platform design based on my experience building and evolving backend systems on AWS and GCP.
+        The focus is on secure ingestion, decoupled processing, workflow orchestration, scalable storage, and multiple consumption patterns.
       </p>
 
-      <div class="proof-grid">
-        <div class="proof-item card">
-          <img src="CloudFlowChart.png" alt="AI Orchestration Architecture Diagram (placeholder)" />
-          <h4>1) Architecture Diagram</h4>
-          <p>
-            End-to-end flow: <strong>Client → Orchestrator → Multiple Services/Agents → Evaluator → API</strong>.
-            Highlights async execution, scoring, routing decisions, and observability.
-          </p>
-        </div>
+      <p style="color: var(--muted); line-height: 1.75; margin-top: 0.6rem;">
+        The architecture is intentionally abstract and product-agnostic. It demonstrates how cloud platforms are designed to handle scale, reliability,
+        observability, and cost control, while supporting analytics and AI/ML workloads as downstream consumers.
+      </p>
 
-        <div class="proof-item card">
-          <img src="assets/evaluation-scoreboard.png" alt="Evaluation Scoreboard (placeholder)" />
-          <h4>2) Evaluation Scoreboard</h4>
-          <p>
-            Practical example of comparing outputs using <strong>quality, latency, and cost</strong> signals. This demonstrates how decisions can be
-            automated and governed in production systems.
-          </p>
-        </div>
+      <!-- IMPORTANT: Put the image in /assets/ and name it exactly as below -->
+      <img
+        src="CloudFlowChart.png"
+        alt="Cloud-native platform reference architecture"
+        style="width: 100%; border-radius: 14px; margin-top: 1.2rem; border: 1px solid rgba(255,255,255,0.12);"
+      />
 
-        <div class="proof-item card">
-          <img src="assets/cloud-pipeline.png" alt="Cloud Pipeline / Workflow (placeholder)" />
-          <h4>3) Cloud Workflow / Pipeline</h4>
-          <p>
-            Example of a backend workflow for data ingestion and processing (e.g., Python pipelines / orchestration). Shows how platform design supports
-            analytics and intelligent processing at scale.
-          </p>
-        </div>
-
-        <div class="proof-item card">
-          <img src="assets/observability-metrics.png" alt="Observability Metrics (placeholder)" />
-          <h4>4) Observability & Governance</h4>
-          <p>
-            Metrics & logs view for monitoring system behaviour: latency, errors, throughput, and cost signals—critical for running AI-enabled platforms reliably.
-          </p>
-        </div>
-      </div>
-
-      <div style="margin-top: 1.5rem;">
-        <div class="pill">Python</div>
-        <div class="pill">AWS / GCP</div>
-        <div class="pill">API Gateway</div>
-        <div class="pill">Airflow / Orchestration</div>
-        <div class="pill">REST / OAuth2</div>
-        <div class="pill">Telemetry / Logging</div>
+      <div style="margin-top: 1rem;">
+        <span class="pill">Cloud-Native Design</span>
+        <span class="pill">Decoupled Processing</span>
+        <span class="pill">Workflow Orchestration</span>
+        <span class="pill">Scalable Storage</span>
+        <span class="pill">Observability</span>
+        <span class="pill">Security & Governance</span>
       </div>
     </div>
   </section>
@@ -289,15 +243,6 @@
   <section id="skills">
     <h2>My Stack</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1.25rem;">
-      <div class="card">
-        <h3>Mobile Engineering</h3>
-        <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
-          <li>Swift, SwiftUI, Objective-C</li>
-          <li>Combine, MVVM, Modular architecture</li>
-          <li>Flutter (working experience)</li>
-        </ul>
-      </div>
-
       <div class="card">
         <h3>Backend & APIs</h3>
         <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
@@ -310,17 +255,26 @@
       <div class="card">
         <h3>Cloud & Data</h3>
         <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
-          <li>AWS, GCP, Firebase</li>
+          <li>AWS, GCP</li>
           <li>Serverless patterns (Lambda / Cloud Functions)</li>
-          <li>ETL / pipelines, workflow orchestration concepts</li>
+          <li>ETL / pipelines & workflow orchestration</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>Testing, CI/CD & Quality</h3>
+        <h3>Mobile (Foundation)</h3>
         <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
-          <li>Appium, XCTest, automation frameworks</li>
+          <li>Swift, SwiftUI, Objective-C</li>
+          <li>Combine, MVVM, Modular architecture</li>
+          <li>Flutter (working experience)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>CI/CD & Quality</h3>
+        <ul style="margin-top: 0.6rem; color: var(--muted); line-height: 1.85;">
           <li>Jenkins, GitHub Actions</li>
+          <li>Appium, XCTest, automation frameworks</li>
           <li>Monitoring / diagnostics (e.g., Dynatrace)</li>
         </ul>
       </div>
@@ -347,117 +301,74 @@
 
   <!-- EXPERIENCE -->
   <section id="experience">
-  <h2>Professional Experience</h2>
+    <h2>Professional Experience</h2>
 
-  <div class="experience-entry card">
-    <h3>Senior Consultant – Technical Architecture (AI, Cloud & APIs) – Radiance Star Ltd., London</h3>
-    <p>
-      Architecting cloud-native platforms that connect mobile and web clients with backend services and data processing workflows.
-      Designed <strong>API-first architectures</strong>, integration patterns, and <strong>Python-based pipelines</strong> (orchestrated using Airflow concepts)
-      to enable scalable data ingestion and analytics-ready systems. Focused on <strong>observability</strong>, <strong>cost-aware design</strong>, and
-      secure platform foundations (auth, access control, and governance).
-    </p>
-    <div style="margin-top: 0.75rem;">
-      <span class="pill">Cloud Architecture (AWS/GCP)</span>
-      <span class="pill">API-First Design</span>
-      <span class="pill">Python Pipelines</span>
-      <span class="pill">Workflow Orchestration</span>
-      <span class="pill">Observability</span>
-      <span class="pill">Security & Governance</span>
+    <div class="experience-entry card">
+      <h3>Senior Consultant – Technical Architecture (AI, Cloud & APIs) – Radiance Star Ltd., London</h3>
+      <p>
+        Architecting cloud-native platforms with API-first design, integration patterns, and Python-based pipelines (including orchestration concepts).
+        Focused on observability, cost-aware design, and secure platform foundations (auth, access control, governance).
+      </p>
+      <div style="margin-top: 0.75rem;">
+        <span class="pill">Cloud Architecture (AWS/GCP)</span>
+        <span class="pill">API-First Design</span>
+        <span class="pill">Python Pipelines</span>
+        <span class="pill">Workflow Orchestration</span>
+        <span class="pill">Observability</span>
+        <span class="pill">Security & Governance</span>
+      </div>
     </div>
-  </div>
 
-  <div class="experience-entry card">
-    <h3>Senior Lead Software Engineer – Lloyds Banking Group (Virtusa UK)</h3>
-    <p>
-      Led modernization across the LBG iOS ecosystem, including <strong>SwiftUI migration</strong> and platform architecture improvements.
-      Partnered across teams on <strong>API-driven integrations</strong> and evolving intelligent customer journeys (e.g., chatbot experiences),
-      with a focus on stability, performance, and scalable delivery.
-    </p>
-    <div style="margin-top: 0.75rem;">
-      <span class="pill">SwiftUI</span>
-      <span class="pill">Mobile Architecture</span>
-      <span class="pill">API Integrations</span>
-      <span class="pill">Reliability</span>
-      <span class="pill">Performance</span>
+    <div class="experience-entry card">
+      <h3>Senior Lead Software Engineer – Lloyds Banking Group (Virtusa UK)</h3>
+      <p>
+        Led modernization across the LBG iOS ecosystem, including SwiftUI migration and platform architecture improvements.
+        Partnered across teams on API-driven integrations and intelligent customer journeys with a focus on stability and performance.
+      </p>
+      <div style="margin-top: 0.75rem;">
+        <span class="pill">SwiftUI</span>
+        <span class="pill">Platform Architecture</span>
+        <span class="pill">API Integrations</span>
+        <span class="pill">Reliability</span>
+        <span class="pill">Performance</span>
+      </div>
     </div>
-  </div>
 
-  <div class="experience-entry card">
-    <h3>Team Lead – Connectivity & Integration Systems – NextGen Technology</h3>
-    <p>
-      Led development of mobile platforms for automotive connectivity and diagnostics.
-      Designed telemetry capture and logging workflows (Bluetooth/network quality, GPS, signal metrics), connecting mobile clients with
-      backend processing and analytics consumption patterns used by engineering and QA teams.
-    </p>
-    <div style="margin-top: 0.75rem;">
-      <span class="pill">Connectivity</span>
-      <span class="pill">Telemetry</span>
-      <span class="pill">Diagnostics</span>
-      <span class="pill">Cross-platform</span>
-      <span class="pill">Data Logging</span>
+    <div class="experience-entry card">
+      <h3>Team Lead – Connectivity & Integration Systems – NextGen Technology</h3>
+      <p>
+        Led development of connectivity and diagnostics platforms. Built telemetry capture and logging workflows used for diagnostics and operational insights.
+      </p>
+      <div style="margin-top: 0.75rem;">
+        <span class="pill">Telemetry</span>
+        <span class="pill">Diagnostics</span>
+        <span class="pill">Connectivity</span>
+        <span class="pill">Cross-platform</span>
+      </div>
     </div>
-  </div>
 
-  <div class="experience-entry card">
-    <h3>Senior iOS Developer – Mobile Architecture & Integration – A1 Technology</h3>
-    <p>
-      Delivered iOS solutions across finance, healthcare, and entertainment.
-      Built modular mobile foundations and integration layers that interacted with backend services, focusing on performance,
-      reliability, and secure handling of user data.
-    </p>
-    <div style="margin-top: 0.75rem;">
-      <span class="pill">iOS Architecture</span>
-      <span class="pill">Backend Integration</span>
-      <span class="pill">Security-Aware Design</span>
-      <span class="pill">Performance</span>
+    <div class="experience-entry card">
+      <h3>Senior iOS Developer – Mobile Architecture & Integration – A1 Technology</h3>
+      <p>
+        Delivered iOS solutions across domains. Built modular mobile foundations and integration layers interacting with backend services, focusing on performance and reliability.
+      </p>
+      <div style="margin-top: 0.75rem;">
+        <span class="pill">iOS Architecture</span>
+        <span class="pill">Backend Integration</span>
+        <span class="pill">Performance</span>
+      </div>
     </div>
-  </div>
-</section>
-  <section id="architecture">
-  <h2>Cloud Platform Architecture</h2>
+  </section>
 
-  <div class="card">
-    <h3>Reference Architecture – Cloud-Native Processing Platform</h3>
-
-    <p style="color: var(--muted); line-height: 1.75; margin-top: 0.5rem;">
-      This diagram represents a generic cloud-native platform design based on my experience
-      building and evolving backend systems on AWS and GCP. The focus is on secure ingestion,
-      decoupled processing, workflow orchestration, scalable storage, and multiple consumption
-      patterns.
-    </p>
-
-    <p style="color: var(--muted); line-height: 1.75; margin-top: 0.5rem;">
-      The architecture is intentionally abstract and product-agnostic. It demonstrates how
-      cloud platforms are designed to handle scale, reliability, observability, and cost control,
-      while supporting analytics and AI/ML workloads as downstream consumers.
-    </p>
-
-    <img
-      src=CloudFlowChart.png"
-      alt="Cloud-native platform reference architecture"
-      style="width: 100%; border-radius: 14px; margin-top: 1.2rem;"
-    />
-
-    <div style="margin-top: 1rem;">
-      <span class="pill">Cloud-Native Design</span>
-      <span class="pill">Decoupled Processing</span>
-      <span class="pill">Workflow Orchestration</span>
-      <span class="pill">Scalable Storage</span>
-      <span class="pill">Observability</span>
-      <span class="pill">Security & Governance</span>
-    </div>
-  </div>
-</section>
-  <!-- MOBILE PROJECTS (KEEP + LIGHTLY REFRAME) -->
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Mobile Project Highlights</h2>
 
     <div class="project-entry card">
       <h3>🔒 LBG App</h3>
       <p>
-        Spearheaded modernization of LBG's core banking app by leading the migration from UIKit to <strong>SwiftUI</strong>.
-        Improved architecture supporting intelligent customer journeys (e.g., chatbot flows) and strengthened performance and UI consistency across the platform.
+        Spearheaded modernization of LBG's core banking app by leading the migration from UIKit to SwiftUI.
+        Improved architecture supporting intelligent customer journeys and strengthened performance and UI consistency.
       </p>
       <ul style="color: var(--muted); margin-top: 0.8rem; line-height: 1.85;">
         <li>📱 Modular SwiftUI architecture (SwiftUI, Combine, MVVM patterns)</li>
@@ -477,32 +388,29 @@
     <div class="project-entry card">
       <h3>📶 Sentinel App – Hyundai, Chrysler</h3>
       <p>
-        Background monitoring tool to collect signal metrics during field testing.
-        Logged GPS, cellular strength, and Wi-Fi/Bluetooth signals in real time for QA and engineering teams.
+        Background monitoring tool to collect signal metrics during field testing. Logged GPS, cellular strength,
+        and Wi-Fi/Bluetooth signals in real time for engineering teams.
       </p>
     </div>
 
     <div class="project-entry card">
       <h3>🚗 DTRP Phase 1 & 2 – Hyundai Europe</h3>
       <p>
-        Performance measurement tools to analyze data transfer rates inside IVI systems.
-        Visualized network quality using Google Maps integration and local telemetry.
+        Performance measurement tools to analyze data transfer rates inside IVI systems. Visualized network quality using maps and telemetry.
       </p>
     </div>
 
     <div class="project-entry card">
       <h3>🗣️ TestOnGo – Fiat Chrysler Europe</h3>
       <p>
-        Voice-guided testing app with TTS & SR capabilities for automotive QA teams.
-        Integrated Firebase backend and dynamic form generation using Excel-driven templates.
+        Voice-guided testing app with TTS & SR capabilities for automotive QA teams. Integrated Firebase backend and dynamic form generation.
       </p>
     </div>
 
     <div class="project-entry card">
       <h3>🧵 Custom Tailoring App (Flutter)</h3>
       <p>
-        Standalone Flutter app for a tailoring business. Features included measurement logging, employee tracking,
-        dark mode, and MVVM architecture for local-first performance.
+        Flutter app for a tailoring business. Features included measurement logging, employee tracking, dark mode, and MVVM architecture.
       </p>
     </div>
 
@@ -516,7 +424,7 @@
     <h2 style="text-align: center;">Contact Me</h2>
     <div class="card" style="text-align: center; max-width: 700px; margin: auto;">
       <p style="margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--muted); line-height: 1.75;">
-        Interested in building AI-enabled platforms, cloud backends, or mobile experiences? Let’s connect.
+        Interested in cloud platforms, backend systems, or architecture discussions? Let’s connect.
       </p>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem;">
         <a href="mailto:nividagautam87@gmail.com" style="padding: 0.8rem 1.5rem; background: linear-gradient(to right, #cc6699, #3366ff); color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">Email</a>
@@ -527,7 +435,6 @@
   </section>
 
   <script>
-    // Optional: simple active link highlight (keeps your current style)
     const links = document.querySelectorAll('.nav-buttons a');
     const sections = [...document.querySelectorAll('section')];
 
